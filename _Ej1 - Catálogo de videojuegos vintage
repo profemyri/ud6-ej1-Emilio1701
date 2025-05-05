@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsl:stylesheet version="1.0" 
+   xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
+
+   <xsl:output method="html" encoding="UTF-8" indent="yes"/>
+
+   <xsl:template match="/">
+      <html>
+         <head>
+            <title>Catalogo de juegos Vintage</title>
+         </head>
+         <body>
+            <h1>Catalogo de juegos Vintage</h1>
+            <xsl:for-each select="video_games/game">
+               <div class="juego">
+                  <h2><xsl:value-of select="juego"/></h2>
+                  <p><xsl:value-of select="descripcion"/></p>
+                  <p>Platforma: <xsl:value-of select="platforma"/></p>
+               </div>
+            </xsl:for-each>
+         </body>
+      </html>
+   </xsl:template>
+</xsl:stylesheet>
